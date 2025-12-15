@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fudi — Discover Recipes</title>
+
+  <link rel="stylesheet/less" href="./styles/style.less">
+  <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<script>
+  (function() {
+    // Сохраняем время начала загрузки страницы
+    const navigationStart = performance.timing.navigationStart;
+
+    // Событие, когда DOM полностью построен (без ожидания стилей, изображений)
+    document.addEventListener('DOMContentLoaded', function() {
+      const domContentLoadedTime = performance.now();
+      console.log('Время формирования DOM (DOMContentLoaded): ' + domContentLoadedTime.toFixed(2) + ' ms');
+    });
+
+    // Событие, когда страница полностью загружена (включая все ресурсы)
+    window.addEventListener('load', function() {
+      const loadEventTime = performance.now();
+      console.log('Время полной загрузки страницы (Load Event): ' + loadEventTime.toFixed(2) + ' ms');
+
+      // Дополнительно, полное время от начала навигации до загрузки
+      const totalLoadTime = loadEventTime - navigationStart;
+      console.log('Общее время загрузки страницы: ' + totalLoadTime.toFixed(2) + ' ms');
+    });
+  })();
+</script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-inner">
+
+      <div class="logo">
+        <img src="./images/logo.png" alt="Fudi">
+      </div>
+
+      <nav class="auth">
+        <button class="btn-signup">Log In</button>
+        <button class="btn-signup">Sign Up</button>
+
+        <div class="menu-toggle" role="button" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+    </div>
+
+    <section class="hero">
+      <h1 aria-hidden="true"></h1>
+      <button class="btn">Get Started</button>
+    </section>
+  </header>
+
+  <!-- ================= PROMO ================= -->
+  <section class="promo">
+
+    <article class="promo-card">
+      <div class="icon-circle">
+        <img src="./images/vector-1.png" alt="Inspiration">
+      </div>
+      <h3>GET INSPIRED</h3>
+      <div class="underline"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Pellentesque vel enim a elit viverra elementum.
+        Aliquam erat volutpat.
+      </p>
+    </article>
+
+    <article class="promo-card">
+      <div class="icon-circle">
+        <img src="./images/vector-2.png" alt="Rewards">
+      </div>
+      <h3>GET REWARDED</h3>
+      <div class="underline"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Pellentesque vel enim a elit viverra elementum.
+        Aliquam erat volutpat.
+      </p>
+    </article>
+
+    <article class="promo-card">
+      <div class="icon-circle">
+        <img src="./images/vector-3.png" alt="Social">
+      </div>
+      <h3>GET SOCIAL</h3>
+      <div class="underline"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Pellentesque vel enim a elit viverra elementum.
+        Aliquam erat volutpat.
+      </p>
+    </article>
+
+  </section>
+
+  <!-- ================= APP ================= -->
+  <section class="app">
+    <div class="app-container">
+
+      <figure class="app-image">
+        <img src="./images/iphone.png" alt="Fudi mobile application">
+      </figure>
+
+      <div class="app-content">
+        <h2>INTRODUCING THE FUDI APP</h2>
+        <div class="underline"></div>
+
+        <p>
+          Morbi eget posuere dolor. Pellentesque cursus aliquet a iquet.
+          Aenean felis sit amet diam mollis ullamcorper.
+          Nullam consequat sem a ante vestibulum tristique.
+        </p>
+
+        <p>
+          Vivamus ligula quam, vehicula non acinia sed, faucibus sit amet libero.
+          In libero dui, eleifend eu nisi id, egestas fringilla odio.
+          Suspendisse porta mattis convallis.
+        </p>
+
+        <p>
+          Suspendisse alicuet felis consectetur libero congue,
+          sed pulvinar diam malesuada.
+          Duis vehicula a nibh id hendrerit.
+        </p>
+
+        <div class="app-buttons">
+          <a href="#" class="btn-app-store">
+            <img src="./images/appstore.png" alt="App Store">
+          </a>
+          <a href="#" class="btn-google-play">
+            <img src="./images/googleplay.png" alt="Google Play">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REVIEW ================= -->
+  <section class="review">
+
+    <div class="review-content">
+      <img src="./images/avatar.jpg" alt="User avatar" class="avatar">
+
+      <blockquote>
+        “I am so happy because I found this recipe, and it just made my life
+        easier. Thanks so much for sharing!”
+        <cite>Michael Dawson, San Francisco, CA</cite>
+      </blockquote>
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </section>
+
+  <!-- ================= CATALOG ================= -->
+  <section class="catalog">
+
+    <h2>Browse by Cuisines</h2>
+
+    <div class="catalog-list">
+
+      <div class="catalog-item">
+        <img src="./images/f1.jpg" alt="Italian food">
+        <div class="overlay">
+          <span class="recipe-count">327 Recipes</span>
+          <h3>ITALIAN</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f2.jpg" alt="Indian food">
+        <div class="overlay">
+          <span class="recipe-count">856 Recipes</span>
+          <h3>INDIAN</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f3.jpg" alt="French food">
+        <div class="overlay">
+          <span class="recipe-count">27 Recipes</span>
+          <h3>FRENCH</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f4.jpg" alt="Steakhouse">
+        <div class="overlay">
+          <span class="recipe-count">174 Recipes</span>
+          <h3>STEAKHOUSE</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f5.jpg" alt="Seafood">
+        <div class="overlay">
+          <span class="recipe-count">237 Recipes</span>
+          <h3>SEAFOOD</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f6.jpg" alt="Sushi">
+        <div class="overlay">
+          <span class="recipe-count">529 Recipes</span>
+          <h3>SUSHI</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f7.jpg" alt="Mexican food">
+        <div class="overlay">
+          <span class="recipe-count">145 Recipes</span>
+          <h3>MEXICAN</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f8.jpg" alt="Chinese food">
+        <div class="overlay">
+          <span class="recipe-count">327 Recipes</span>
+          <h3>CHINESE</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f9.jpg" alt="Pizza">
+        <div class="overlay">
+          <span class="recipe-count">1,437 Recipes</span>
+          <h3>PIZZA</h3>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="./images/f10.jpg" alt="American food">
+        <div class="overlay">
+          <span class="recipe-count">23,567 Recipes</span>
+          <h3>AMERICAN</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat-item">
+        <h4>23,567</h4>
+        <p>Recipes Available</p>
+      </div>
+
+      <div class="stat-item">
+        <h4>431,729</h4>
+        <p>Active Users</p>
+      </div>
+
+      <div class="stat-item">
+        <h4>892,173</h4>
+        <p>Positive Reviews</p>
+      </div>
+
+      <div class="stat-item">
+        <h4>56,581</h4>
+        <p>Photos & Videos</p>
+      </div>
+
+      <div class="stat-item">
+        <h4>3,182</h4>
+        <p>Spices and Herbs</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2014 Fudi. All Rights Reserved.</p>
+    <small>Design inspiration: bekades.com</small>
+  </footer>
+
+</body>
+
+</html>
